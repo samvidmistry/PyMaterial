@@ -52,7 +52,7 @@ class CheckboxArea(MShape):
         self.__painter = QPainter()
         self.__bounding_rect = QRect(self.x + self.margin_left, self.y + self.margin_top,
                                      self.width, self.height)
-        # self.hide_initially()
+        self.hide_initially()
 
     def hide_initially(self):
         path = QPainterPath()
