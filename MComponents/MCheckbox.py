@@ -1,4 +1,4 @@
-from MComponents.TwoStateShape import TwoStateShape
+from MComponents.MTwoStateShape import MTwoStateShape
 
 __author__ = "Samvid Mistry"
 
@@ -77,9 +77,9 @@ class CheckboxArea(MShape):
         painter.end()
 
 
-class MCheckBox(TwoStateShape):
+class MCheckBox(MTwoStateShape):
     def __init__(self):
-        TwoStateShape.__init__(self)
+        MTwoStateShape.__init__(self)
 
         self.max_height = 20
         self.max_width = 20
@@ -100,9 +100,9 @@ class MCheckBox(TwoStateShape):
             self.uncheck()
 
     def check(self):
-        if TwoStateShape.check(self):
+        if MTwoStateShape.check(self):
             self.__area.animate().reveal("show_circle").duration(200).start()
 
     def uncheck(self):
-        if TwoStateShape.uncheck(self):
+        if MTwoStateShape.uncheck(self):
             self.__area.animate().reveal("hide_circle").duration(200).start()
