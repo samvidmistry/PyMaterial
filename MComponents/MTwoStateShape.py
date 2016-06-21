@@ -7,7 +7,7 @@ from PySide.QtCore import Signal
 from MComponents.MShape import MShape
 
 
-class TwoStateShape(MShape):
+class MTwoStateShape(MShape):
     """
     An abstract class representing any MShape which can have binary state, which is checked and unchecked.
     Examples of this can be a checkbox, switch or a radio button.
