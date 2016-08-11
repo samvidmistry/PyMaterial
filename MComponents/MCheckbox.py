@@ -1,5 +1,3 @@
-from MComponents.MTwoStateShape import MTwoStateShape
-
 __author__ = "Samvid Mistry"
 
 from MComponents.MTwoStateShape import MTwoStateShape
