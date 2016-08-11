@@ -4,6 +4,7 @@ __author__ = "Samvid Mistry"
 
 import sys
 from PySide.QtGui import *
+from PySide.QtCore import *
 from MUtilities import MColors
 from MComponents.MCheckbox import MCheckBox
 
