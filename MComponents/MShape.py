@@ -11,6 +11,7 @@ class MShape(QWidget, MAnimator):
         QWidget.__init__(self)
         self.__x = 0
         self.__y = 0
+        self.__elevation = 0
         self.__width = 0
         self.__height = 0
         self.__opacity = 1.0
@@ -34,8 +35,8 @@ class MShape(QWidget, MAnimator):
         self.__layout.setContentsMargins(QMargins(0, 0, 0, 0))
         self.__children = []
 
-    def add_layout_item(self, shape, x, y):
-        self.__layout.addWidget(shape, x, y)
+    def add_layout_item(self, shape, x, y, alignment=0):
+        self.__layout.addWidget(shape, x, y, alignment=alignment)
         self.__children.append(shape)
         self.update()
 
@@ -186,3 +187,11 @@ class MShape(QWidget, MAnimator):
     @fading.setter
     def fading(self, is_fading):
         self.__fading = is_fading
+
+    @property
+    def elevation(self) -> int:
+        return self.__elevation
+
+    @elevation.setter
+    def elevation(self, value: int):
+        self.__elevation = value

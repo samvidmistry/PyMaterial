@@ -1,3 +1,5 @@
+from typing import List
+
 __author__ = "MaitreyaBuddha"
 
 import abc
@@ -53,7 +55,7 @@ class MAnimate(QObject):
         self.__fps = 60
 
         # TODO: Choose a fucking proper name for the variable
-        self.stop_whatever_you_are_doing_and_cancel_the_animation_right_there = False
+        self.interrupt = False
 
     def start(self, animation_thread):
         """
@@ -66,7 +68,7 @@ class MAnimate(QObject):
         animation_thread.add_method(self.animate, self.__shapes)
 
     @abc.abstractmethod
-    def animate(self, shape):
+    def animate(self, shapes: List):
         """
         This method must contain the core animation logic and should also
         emit appropriate signals at appropriate point in the execution

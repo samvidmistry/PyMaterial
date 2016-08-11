@@ -14,6 +14,7 @@ class MFade(MAnimate):
     including 0 and 1 (0 for complete invisibility and 1 for complete
     visibility)
     """
+
     def __init__(self):
         MAnimate.__init__(self)
         self.can_run_reversed = True
@@ -39,7 +40,6 @@ class MFade(MAnimate):
             for s in shapes:
                 print("target is", self.target)
                 self.value_animators.append(MValueAnimator(s.opacity, self.target, self.duration, self.fps))
-
 
         # Main thread loop
         if self.running or self.paused:
@@ -80,7 +80,7 @@ class MFade(MAnimate):
             else:
                 # Flag to find out even if one shape is left to complete the
                 # whole fade out animation
-                if self.stop_whatever_you_are_doing_and_cancel_the_animation_right_there is False:
+                if self.interrupt is False:
                     completed = False
                     for shape_counter, s in enumerate(shapes):
                         try:
@@ -92,7 +92,7 @@ class MFade(MAnimate):
                         s.update()
                         QApplication.processEvents()
                 else:
-                    self.stop_whatever_you_are_doing_and_cancel_the_animation_right_there = False
+                    self.interrupt = False
                     completed = True
 
                 if completed:

@@ -7,7 +7,7 @@ class MValueAnimator:
     help in applying various mathematical functions to the progress
     of the animation.
     """
-    def __init__(self, initial_value, final_value, duration, fps):
+    def __init__(self, initial_value, final_value, duration, fps=60):
         """
 
         :param initial_value:
